@@ -6,8 +6,7 @@
 #include <cstdint>
 #include "GaussianSampler.hpp"
 
-// IMPORTANTE:
-// Incluimos el API real usando la ruta correcta dentro del proyecto.
+
 extern "C" {
 #include "../../external/pqclean/crypto_sign/falcon-512/clean/api.h"
 }
