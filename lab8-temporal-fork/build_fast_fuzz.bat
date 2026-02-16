@@ -1,0 +1,3 @@
+call "C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Auxiliary\Build\vcvars64.bat"
+echo [DEBUG] Compiling Native C Fuzzer...
+cl /nologo /O2 /Isrc /Isrc/hal /Fe:fast_fuzz_v2.exe fast_fuzz.c src/core/security_controller.c src/phys/power_profile.c src/math/ntt_accel.c > build_log.txt 2>&1

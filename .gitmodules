@@ -1,0 +1,3 @@
+[submodule "external/pqclean"]
+	path = external/pqclean
+	url = https://github.com/pqclean/pqclean.git

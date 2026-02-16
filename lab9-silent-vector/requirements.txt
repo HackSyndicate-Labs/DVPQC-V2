@@ -1,0 +1,14 @@
+# Lab9: DLT-03 Silent Vector — Dependencies
+# =============================================
+
+# Core PQC Library
+liboqs-python>=0.10.0
+
+# Scientific Computing
+numpy>=1.24.0
+
+# Cryptographic Utilities
+pycryptodome>=3.19.0
+
+# Terminal UI
+rich>=13.5.0

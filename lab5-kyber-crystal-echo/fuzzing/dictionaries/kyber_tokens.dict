@@ -1,0 +1,56 @@
+# Kyber Fuzzing Dictionary
+# =========================
+# Tokens for AFL/AFLplusplus dictionary-based mutations
+# These are patterns that may be interesting in Kyber ciphertexts
+
+# Boundary values
+"\x00"
+"\x7f"
+"\x80"
+"\xff"
+
+# Common padding patterns
+"\x00\x00\x00\x00"
+"\xff\xff\xff\xff"
+"\x00\x00\x00\x00\x00\x00\x00\x00"
+"\xff\xff\xff\xff\xff\xff\xff\xff"
+
+# Kyber coefficient boundaries (mod 3329)
+# 3329 = 0x0D01
+"\x01\x0d"
+"\x00\x0d"
+"\x02\x0d"
+
+# NTT-related patterns
+"\x00\x01"
+"\xff\x00"
+"\x00\xff"
+
+# Component boundaries (320 bytes each for u in Kyber768)
+"\x40\x01"  # 320
+"\x80\x02"  # 640
+"\xc0\x03"  # 960
+
+# Header-like patterns (8 bytes < 128 + 8 bytes >= 128)
+"\x7f\x7f\x7f\x7f\x7f\x7f\x7f\x7f\x80\x80\x80\x80\x80\x80\x80\x80"
+
+# Alternating patterns
+"\x00\xff"
+"\xff\x00"
+"\x55\xaa"
+"\xaa\x55"
+
+# Polynomial ring modulus patterns (x^256 + 1)
+"\x00\x01\x00\x00"
+
+# Compression-related patterns (10-bit for u, 4-bit for v)
+"\x00\x04"  # 2^10 / 256
+"\x10"      # 2^4
+
+# Entropy-triggering patterns (many unique bytes)
+"\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0a\x0b\x0c\x0d\x0e\x0f"
+"\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f"
+"\xf0\xf1\xf2\xf3\xf4\xf5\xf6\xf7\xf8\xf9\xfa\xfb\xfc\xfd\xfe\xff"
+
+# Zero patterns for component testing
+"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
