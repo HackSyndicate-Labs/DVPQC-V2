@@ -4,8 +4,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <thread>   // ← NECESARIO
-#include <chrono>   // ← NECESARIO
+#include <thread>   
+#include <chrono>  
 
 
 int main() {
